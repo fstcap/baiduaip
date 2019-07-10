@@ -10,7 +10,7 @@
 #with open(sys.argv[1],"rb") as f:
 #    img = f.read()
 
-#develop分支合并到master分支测试 冲突来了
+#我进行了修改
 import os
 #import numpy as np
 import base64
