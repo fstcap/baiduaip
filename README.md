@@ -1,7 +1,7 @@
 百度aip增值税发票和国税局校验
 api http://10.114.18.147:8000/ocr/val
 Request:
-
+===
 	methods:POST
 	headers:Content-Type=application/x-www-form-urlencoded
 	body(form-data):type=(0/1) #0:image = file ;1:image=url
@@ -15,12 +15,14 @@ Request:
 				}	#(rely on 'methods' )
 				
 Response:
+===
 	status:1(1:success)
 	msg:''(about none)
 	data:{}
 	
 
 Error:
+===
 	error:1001 - 'No file part'        
 	      1002 - 'No selected file'
 	      1003 - 'Choose png,jpg,jpeg'
