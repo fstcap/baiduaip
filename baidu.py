@@ -92,8 +92,8 @@ class GetMessage:
         token_url = 'https://aip.baidubce.com/oauth/2.0/token'
         client_data = {
                 "grant_type":"client_credentials",
-                "client_id":"R99YyY80mVKOnrjOv6wUl0D7", #client_id
-                "client_secret":"DFPzgXYjGn0RNDwizHPrbSUSp8oMniGP"}
+                "client_id":"", #client_id
+                "client_secret":""}
         res = requests.post(token_url,data=client_data)
         res_body = json.loads(res.text)
         res_status = SetResponse()
@@ -139,8 +139,8 @@ class GetMessage:
 
 #发票在线校验
 class ValidationTicky:
-    app_key = 'ecdd2c84a299473f93debe9e2e969ddb'
-    app_secret = 'a1e27fed-127e-47c4-9e4d-47845a371c1b'
+    app_key = ''
+    app_secret = ''
     token_url = 'https://open.leshui365.com/getToken'
     fapiao_url = 'https://open.leshui365.com/api/invoiceInfoForCom'
     access_token = ''
