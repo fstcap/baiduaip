@@ -92,8 +92,8 @@ class GetMessage:
         token_url = 'https://aip.baidubce.com/oauth/2.0/token'
         client_data = {
                 "grant_type":"client_credentials",
-                "client_id":"", #client_id
-                "client_secret":""}
+                "client_id":"R99YyY80mVKOnrjOv6wUl0D7", #client_id
+                "client_secret":"DFPzgXYjGn0RNDwizHPrbSUSp8oMniGP"}
         res = requests.post(token_url,data=client_data)
         res_body = json.loads(res.text)
         res_status = SetResponse()
@@ -301,7 +301,6 @@ def flask_api():
                 return response.judge_type(request)
         else:
             return jsonify(res.set_error(1008,'loss vali params'))
-    '''
     @app.after_request
     def af_request(resp):
         resp = make_response(resp)
@@ -309,7 +308,7 @@ def flask_api():
         resp.headers['Access-Control-Methods'] = 'GET,POST,OPTIONS'
         resp.headers['Access-Control-Allow-Headers'] = 'x-requested-with,content-type'
         return resp
-    '''    
+    
     return app
 
 app = flask_api()
