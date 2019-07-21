@@ -107,11 +107,11 @@ class GetMessage:
     
     def request_aip(self): 
         res_status = SetResponse()
-        ocr_url = 'https://aip.baidubce.com/rest/2.0/ocr/v1/vat_invoice'
+        ocr_url = 'https://aip.baidubce.com/rest/2.0/ocr/v1/accurate_basic'
         headers = {"Content-Type":"application/x-www-form-urlencoded"}
         params = {"access_token":self.access_token}
         image_base64 = self.image
-        body = {"accuracy":"hight","image":image_base64}
+        body = {"detect_direction":"false","image":image_base64,"detect_direction","true"}
         res = requests.post(ocr_url,headers=headers,params=params,data=body)
         res_json = json.loads(res.text)
         print("获取api图片信息",str(res_json))
@@ -258,7 +258,7 @@ class ResponeBody:
         if 'error' in data:
             return jsonify(data)
         result = data['words_result']
-        return self.val_fapiao(result['InvoiceCode'],result['InvoiceNum'],result['InvoiceDate'],result['CheckCode'])
+        return result
     
     def val_fapiao(self,InvoiceCode,InvoiceNum,InvoiceDate,CheckCode):
         res = SetResponse()
